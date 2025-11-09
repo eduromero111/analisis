@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del Perú</title>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Roboto", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: url('img/machu.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* --- Capa semitransparente encima del fondo --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 60, 0.45);
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+            position: relative;
+        }
+
+        /* --- Logo de la Universidad --- */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 120px;
+            height: auto;
+        }
+
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8em;
+            color: #fff;
+            text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .icono-titulo {
+            width: 80px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        header p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: #f2f2f2;
+            margin: 10px 0;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .descripcion {
+            max-width: 850px;
+            margin: 25px auto 40px auto;
+            color: #e3e8f0;
+            line-height: 1.7;
+            font-size: 1.05em;
+            text-align: center;
+            padding: 0 25px;
+            background-color: rgba(0, 0, 0, 0.45);
+            border-radius: 10px;
+            backdrop-filter: blur(2px);
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding: 20px 20px 50px 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 15px;
+            padding: 25px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.2s ease, background 0.3s;
+            backdrop-filter: blur(4px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .card img.icono {
+            width: 65px;
+            height: 65px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .card h3 {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .boton {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #0066cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #cfd8e3;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- LOGO UNIVERSIDAD -->
+        <img src="img/logo.jpeg" alt="Logo Universidad Científica del Sur" class="logo">
+
+        <h1>
+            <img src="img/peru.jpg" alt="Icono Perú" class="icono-titulo">
+            Análisis de la Realidad Nacional del Perú
+        </h1>
+
+        <p>Curso de Ciencias Sociales – 2025</p>
+        <p>Por: - Villanueva Hidalgo, Daniela</p>
+        <p>     - Astuvilca Diaz, Vanessa</p>
+        <p>     - Misaico Tacas, Marisol</p>
+        <p>     - Puchuri Lopez, Martha</p>
+
+        <div class="descripcion">
+            Esta página presenta un análisis integral de la realidad nacional del Perú, abordando tres ejes fundamentales: la geopolítica del territorio peruano, la biodiversidad y los recursos naturales, y las principales amenazas derivadas del cambio climático. A través de estos trabajos, se busca comprender los desafíos y potencialidades del país en su contexto actual.
+        </div>
+    </header>
+
+    <section class="contenedor">
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="icono" alt="Infografía">
+            <h3>Infografía geopolítica del Perú</h3>
+            <p>Análisis visual de las regiones políticas y sociales del Perú.</p>
+            <a href="https://drive.google.com/file/d/1PtSj1wasJJd8zu7lGfBYhuNy15NDQUpD/view?usp=drive_link" class="boton" target="_blank">Ver infografía</a>
+        </div>
+
+        <div class="card">
+            <img src="img/tree.png" class="icono" alt="Biodiversidad">
+            <h3>Biodiversidad</h3>
+            <p>Explora la riqueza natural del Perú y su diversidad ecológica.</p>
+            <a href="https://drive.google.com/file/d/1pmFFkORKIWyPncQOlFbf48vG1IhB1KLd/view?usp=drive_link" class="boton" target="_blank">Ver biodiversidad</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="icono" alt="Mapa de vulnerabilidad">
+            <h3>Mapa de vulnerabilidad</h3>
+            <p>Mapa interactivo de las zonas más vulnerables del territorio peruano.</p>
+            <a href="https://drive.google.com/file/d/1ZWDNoxT2JHzMYKt_UyS5MYDZO79SUowP/view?usp=drive_link" class="boton" target="_blank">Ver mapa</a>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" class="icono" alt="Informe">
+            <h3>Informe</h3>
+            <p>Resumen de los estudios con conclusiones sobre la realidad nacional.</p>
+            <a href="https://drive.google.com/file/d/1tFKBUPPMhwFCFQdQQuSZOhQ94Kgn91d4/view?usp=drive_link" class="boton" target="_blank">Leer informe</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 | Proyecto académico – Ciencias Sociales
+    </footer>
+</body>
+</html>
