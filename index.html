@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Capa semitransparente encima del fondo --- */
         body::before {
             content: "";
             position: fixed;
@@ -38,107 +37,105 @@
 
         header {
             text-align: center;
-            padding: 60px 20px 20px 20px;
+            padding: 60px 20px 20px;
             position: relative;
+            animation: fadeDown 1s ease;
         }
 
-        /* --- Logo de la Universidad --- */
         .logo {
             position: absolute;
             top: 20px;
             right: 30px;
             width: 120px;
-            height: auto;
         }
 
         header h1 {
             font-family: 'Merriweather', serif;
-            font-size: 2.8em;
-            color: #fff;
-            text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.6);
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-size: 2.6em;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 15px;
+            text-shadow: 2px 3px 10px rgba(0,0,0,0.6);
         }
 
         .icono-titulo {
-            width: 80px;
-            height: auto;
+            width: 75px;
             border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
         }
 
         header p {
             font-family: 'Merriweather', serif;
-            font-size: 1.3em;
-            color: #f2f2f2;
-            margin: 10px 0;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
         }
 
         .descripcion {
-            max-width: 850px;
-            margin: 25px auto 40px auto;
-            color: #e3e8f0;
-            line-height: 1.7;
-            font-size: 1.05em;
-            text-align: center;
-            padding: 0 25px;
-            background-color: rgba(0, 0, 0, 0.45);
-            border-radius: 10px;
-            backdrop-filter: blur(2px);
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 20px;
+            background: rgba(0,0,0,0.45);
+            border-radius: 12px;
+            line-height: 1.6;
+            animation: fadeIn 1.5s ease;
         }
 
+        /* CONTENEDOR HORIZONTAL */
         .contenedor {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 25px;
-            padding: 20px 20px 50px 20px;
-            max-width: 700px;
+            padding: 30px;
+            max-width: 1200px;
             margin: auto;
         }
 
+        /* TARJETAS */
         .card {
-            background: rgba(0, 0, 0, 0.45);
+            width: 300px;
+            background: rgba(0,0,0,0.45);
             border-radius: 15px;
             padding: 25px;
-            width: 100%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             text-align: center;
-            transition: transform 0.2s ease, background 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             backdrop-filter: blur(4px);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: aparecer 0.8s ease forwards;
         }
 
+        /* Retraso progresivo */
+        .card:nth-child(1){animation-delay: 0.2s;}
+        .card:nth-child(2){animation-delay: 0.4s;}
+        .card:nth-child(3){animation-delay: 0.6s;}
+        .card:nth-child(4){animation-delay: 0.8s;}
+        .card:nth-child(5){animation-delay: 1s;}
+        .card:nth-child(6){animation-delay: 1.2s;}
+        .card:nth-child(7){animation-delay: 1.4s;}
+        .card:nth-child(8){animation-delay: 1.6s;}
+        .card:nth-child(9){animation-delay: 1.8s;}
+
         .card:hover {
-            transform: translateY(-5px);
-            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-8px);
+            background: rgba(0,0,0,0.6);
         }
 
         .card img.icono {
             width: 65px;
-            height: 65px;
             margin-bottom: 15px;
-            opacity: 0.9;
         }
 
         .card h3 {
-            font-size: 1.3em;
-            color: #fff;
             margin-bottom: 10px;
         }
 
         .card p {
             font-size: 0.95em;
-            color: #e0e0e0;
+            color: #ddd;
             margin-bottom: 20px;
         }
 
         .boton {
-            background-color: #1e90ff;
+            background: #1e90ff;
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
@@ -148,15 +145,38 @@
         }
 
         .boton:hover {
-            background-color: #0066cc;
+            background: #0066cc;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            color: #cfd8e3;
-            background-color: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(3px);
+            background: rgba(0,0,0,0.4);
+            margin-top: 40px;
+        }
+
+        /* ANIMACIONES */
+        @keyframes aparecer {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -183,7 +203,7 @@
 
     <section class="contenedor">
         <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="icono" alt="Infografía">
+            <img src="img/infografia.png" class="icono" alt="Infografía">
             <h3>Infografía geopolítica del Perú</h3>
             <p>Análisis visual de las regiones políticas y sociales del Perú.</p>
             <a href="https://drive.google.com/file/d/1PtSj1wasJJd8zu7lGfBYhuNy15NDQUpD/view?usp=drive_link" class="boton" target="_blank">Ver infografía</a>
@@ -204,7 +224,7 @@
         </div>
 
         <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" class="icono" alt="Informe">
+            <img src="img/publicacion.png" class="icono" alt="Informe">
             <h3>Informe</h3>
             <p>Resumen de los estudios con conclusiones sobre la realidad nacional.</p>
             <a href="https://docs.google.com/document/d/1HC2juJ9e_WnKjmDh-5WuEfmUeOxMZgtxfcspnBp4nQ4/edit?usp=sharing" class="boton" target="_blank">Leer informe</a>
@@ -225,6 +245,35 @@
             <p>Video informativo sobre los efectos del cambio climático en el Perú.</p>
             <a href="https://youtu.be/1ewznbrfuXs" class="boton" target="_blank">Ver video</a>
         </div>
+
+        <div class="card">
+            <img src="img/informe-medico.png" class="icono" alt="Informe Final">
+            <h3>Informe Final</h3>
+            <p>Informe sobre la escasez hídrica en La Rinconada y sus principales impactos.</p>
+            <a href="https://drive.google.com/file/d/19kVMfpVhtex0syYNVttBo17ec9nTYLwB/view?usp=sharing"
+            class="boton"
+            target="_blank">
+            Ver informe final
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="img/guion.png" class="icono" alt="Documento adicional">
+            <h3>Guión de Video</h3>
+            <p>Material de apoyo relacionado con el análisis de la realidad nacional del Perú.</p>
+            <a href="https://drive.google.com/file/d/1j6UoJAQxoE0BuSkkMXCWtIm78Qzbb--s/view?usp=sharing"
+            class="boton"
+            target="_blank">Ver Guión de Video</a>
+        </div>
+
+        <div class="card">
+            <img src="img/reproductor-de-video.png" class="icono" alt="Video YT">
+            <h3>Video de las Propuestas</h3>
+            <p>Video explicativo relacionado con la problemática ambiental y social en el Perú.</p>
+            <a href="https://youtu.be/nX7LrBaGtVU"
+            class="boton"
+            target="_blank">Ver Video</a>
+        </div>
     </section>
 
     <footer>
@@ -232,3 +281,4 @@
     </footer>
 </body>
 </html>
+
